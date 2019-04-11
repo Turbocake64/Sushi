@@ -1,0 +1,26 @@
+<h1>Sushi Rama!</h1>
+
+<h2>Sushi Ordered</h2>
+<ul>
+  {{#each sushi}}
+    {{#unless devoured}}
+      {{> pickups/pickup-block devoured=false}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Orders Picked Up</h2>
+
+<ul>
+  {{#each sushi}}
+    {{#if devoured}}
+      {{> pickups/pickup-block devoured=true}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+<form action="/api/sushi" method="POST">
+    <label>Enter an order</label>
+    <input type="text" name="sushi_name">
+    <input type="submit">
+</form>
