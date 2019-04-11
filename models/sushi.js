@@ -15,6 +15,7 @@ var tabemono = {
       });
     },
     update: function(cols, condition, cb) {
+      console.log("condition: ", condition);
       orm.update("sushi", cols, condition, function(res) {
         cb(res);
       });

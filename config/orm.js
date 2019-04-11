@@ -32,7 +32,7 @@ function printQuestionMarks(num) {
     },
 
     create: function(table, cols, vals, cb) {
-      var queryString = "INSERT INTO ?? (??) VALUES (?) ";
+      var queryString = "INSERT INTO ?? (??) VALUES (?)";
   
       console.log(queryString);
   
@@ -46,9 +46,9 @@ function printQuestionMarks(num) {
     },
     // An example of objColVals would be {name: panther, sleepy: true}
     update: function(table, cols, condition, cb) {
-      var queryString = "UPDATE ?? SET ?? = ?";
+      var queryString = "UPDATE sushi SET devoured=?? WHERE id=?";
 
-      console.log(queryString);
+      console.log("cols", cols);
       connection.query(queryString, [table, cols, condition], function(err, result) {
         if (err) {
           throw err;

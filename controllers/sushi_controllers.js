@@ -31,11 +31,12 @@ router.post("/api/sushi", function (req, res) {
 router.put("/api/sushi/:id", function (req, res) {
   var condition = "id = " + req.params.id;
 
-  console.log("condition", condition);
-
+  // console.log("condition", condition);
+  // console.log(req.params.id); 
+  console.log(req.body)
   tabemono.update(
-    { devoured: req.body.devoured },
-    condition, function (result) {
+    parseInt(req.body.devoured),
+    req.params.id, function (result) {
       if (result.changedRows === 0) {
         // If no rows were changed, then the ID must not exist, so 404
         return res.status(404).end();

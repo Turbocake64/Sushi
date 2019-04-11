@@ -1,5 +1,7 @@
 <li>
-    {{sushi}}
+    {{sushi_name}}
 
-    <button class="devour" data-id="{{id}}">{{sushi_name}}</button>
+    <button class="pick-up" data-id="{{id}}" data-devoured="{{notReady}}">
+        {{#if notReady}}Pick Me up!{{else}}Eat Me!{{/if}}
+    </button>
 </li>
